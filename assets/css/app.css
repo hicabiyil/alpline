@@ -906,44 +906,30 @@ blockquote cite {
   font-weight: 700;
 }
 
-.dealer-map svg {
+.world-map-image {
   position: absolute;
-  inset: 7% 4% 7%;
-  width: 92%;
-  height: 86%;
+  left: 50%;
+  top: 53%;
+  width: min(92%, 1120px);
+  height: auto;
+  opacity: 0.72;
+  filter: invert(1) brightness(1.2) saturate(0.1);
+  mix-blend-mode: screen;
   pointer-events: none;
+  transform: translate(-50%, -50%);
 }
 
-.map-grid path {
-  fill: none;
-  stroke: rgba(220, 232, 240, 0.11);
-  stroke-width: 1;
-}
-
-.map-land path {
-  fill: rgba(220, 232, 240, 0.22);
-  stroke: rgba(220, 232, 240, 0.52);
-  stroke-width: 1.2;
-}
-
-.map-focus circle {
-  fill: rgba(23, 63, 143, 0.24);
-  stroke: rgba(215, 232, 170, 0.9);
-  stroke-dasharray: 6 8;
-  stroke-width: 2;
-}
-
-.map-focus path {
-  fill: none;
-  stroke: rgba(215, 232, 170, 0.9);
-  stroke-width: 4;
-}
-
-.map-labels text {
-  fill: rgba(255, 255, 255, 0.38);
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 0;
+.map-focus-ring {
+  position: absolute;
+  left: 59.3%;
+  top: 36%;
+  z-index: 1;
+  width: 132px;
+  height: 96px;
+  border: 2px dashed rgba(215, 232, 170, 0.82);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-13deg);
 }
 
 .dealer-point {
@@ -963,7 +949,7 @@ blockquote cite {
   font-size: 15px;
   font-weight: 800;
   cursor: pointer;
-  transform: translate(-50%, -50%);
+  transform: translate(var(--tx, -50%), var(--ty, -50%));
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -987,7 +973,6 @@ blockquote cite {
 .dealer-point.is-active,
 .dealer-point:hover {
   background: var(--blue);
-  transform: translate(-50%, -50%) translateY(-4px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
 }
 
@@ -1025,17 +1010,17 @@ blockquote cite {
 }
 
 .route-kayseri {
-  left: 55%;
-  top: 47%;
-  width: 64px;
-  transform: rotate(-39deg);
+  left: 55.6%;
+  top: 41%;
+  width: 62px;
+  transform: rotate(-29deg);
 }
 
 .route-krasnodar {
-  left: 55%;
-  top: 39%;
-  width: 52px;
-  transform: rotate(-17deg);
+  left: 56%;
+  top: 35.5%;
+  width: 58px;
+  transform: rotate(-10deg);
 }
 
 .dealer-list {
